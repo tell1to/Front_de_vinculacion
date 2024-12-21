@@ -6,7 +6,7 @@
                 <div class="text-center mb-5">
                     <img src="assets/demo/images/login/avatar.png" alt="Image" height="50" class="mb-3">
                     <div class="text-900 text-3xl font-medium mb-3">Bienvenido</div>
-                    <span class="text-600 font-medium">Registrate para continua</span>
+                    <span class="text-600 font-medium">Registrate para continuar</span>
                 </div>
 
                 <div>
@@ -18,10 +18,10 @@
 
                     <div class="flex align-items-center justify-content-between mb-5 gap-5">
                         <div class="flex align-items-center">
-                            <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
-                            <label for="rememberme1">Recuerdar clave</label>
+                            <p-checkbox id="recuerdame1" [binary]="true" styleClass="mr-2"></p-checkbox>
+                            <label for="recuedame1">Recordar clave</label>
                         </div>
-                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">Olvidaste tu clave?</a>
+                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)" [routerLink]="['/']">Tienes una cuenta?</a>
                     </div>
                     <button pButton pRipple label="Iniciar" class="w-full p-3 text-xl" [routerLink]="['/']"></button>
                 </div>
