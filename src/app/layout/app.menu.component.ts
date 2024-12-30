@@ -54,6 +54,11 @@ export class AppMenuComponent implements OnInit {
                         ]
                     },
                     {
+                        label: 'Admin',
+                        icon: 'pi pi-fw pi-user-edit',
+                        routerLink: ['/pages/admin']
+                    },                   
+                    {
                         label: 'Crud',
                         icon: 'pi pi-fw pi-pencil',
                         routerLink: ['/pages/crud']
@@ -68,6 +73,12 @@ export class AppMenuComponent implements OnInit {
                         label: 'Vacio',
                         icon: 'pi pi-fw pi-circle-off',
                         routerLink: ['/pages/empty']
+                    },
+                   
+                    {
+                        label: 'Agendar Cita',
+                        icon: 'pi pi-fw pi-book',
+                        routerLink: ['/pages/cita']
                     },
                 ]
             },
