@@ -1,0 +1,48 @@
+<div class="grid">
+  <div class="col-12">
+      <div class="card">
+          <h4 class="mb-4 text-center">Calendario de Citas Médicas</h4>
+          <p-calendar 
+              [(ngModel)]="selectedDate" 
+              [inline]="true" 
+              [showOtherMonths]="true" 
+              [showWeek]="true" 
+              [locale]="es" 
+              dateFormat="dd/mm/yy">
+          </p-calendar>
+      </div>
+  </div>
+  <div class="col-12">
+      <div class="card">
+          <h4 class="mb-3">Citas Programadas</h4>
+          <p-table [value]="appointments" [scrollable]="true" scrollHeight="400px" responsiveLayout="scroll">
+              <ng-template pTemplate="header">
+                  <tr>
+                      <th>Fecha</th>
+                      <th>Hora</th>
+                      <th>Médico</th>
+                      <th>Paciente</th>
+                      <th>Estado</th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-appointment>
+                  <tr>
+                      <td>{{appointment.date}}</td>
+                      <td>{{appointment.time}}</td>
+                      <td>{{appointment.doctor}}</td>
+                      <td>{{appointment.patient}}</td>
+                      <td>
+                          <span 
+                              [ngClass]="{
+                                  'bg-green-500 text-white': appointment.status === 'Confirmada',
+                                  'bg-orange-500 text-white': appointment.status === 'Pendiente',
+                                  'bg-red-500 text-white': appointment.status === 'Cancelada'
+                              }" 
+                              class="p-1 border-round">{{appointment.status}}</span>
+                      </td>
+                  </tr>
+              </ng-template>
+          </p-table>
+      </div>
+  </div>
+</div>

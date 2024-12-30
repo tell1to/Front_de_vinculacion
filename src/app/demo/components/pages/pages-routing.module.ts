@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
         { path: 'empty', loadChildren: () => import('./empty/emptydemo.module').then(m => m.EmptyDemoModule) },
         { path: 'history', loadChildren: () => import('./history/historydemo.module').then(m => m.HistoryDemoModule) },
         { path: 'new-history', loadChildren: () => import('./new_history/new_historydemo.module').then(m => m.NewHistoryDemoModule) },
+        { path: 'calendario', loadChildren: () => import('./calendario/calendariodemo.module').then(m => m.CalendarDemoModule) }, 
         { path: '**', redirectTo: '/notfound' }
     ])],
     exports: [RouterModule]
