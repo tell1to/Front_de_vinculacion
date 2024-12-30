@@ -5,26 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamiento de Citas</title>
     <link rel="stylesheet" href="cita.component.scss">
-    <link rel="stylesheet" href="cita.component.scss">
+    <script>
+        function mostrarMedicos() {
+            const especialidad = document.getElementById('profesional').value;
+            const medicosSelect = document.getElementById('medico');
+            
+            // Limpiar el select de médicos
+            medicosSelect.innerHTML = '<option value="" disabled selected>Selecciona un médico</option>';
+
+            let medicos = [];
+            if (especialidad === 'oftalmologo') {
+                medicos = ['Dr. Juan Pérez', 'Dra. María Gómez', 'Dr. Carlos Fernández'];
+            } else if (especialidad === 'optometrista') {
+                medicos = ['Lic. Ana Martínez', 'Lic. Pablo López'];
+            } else if (especialidad === 'psicologo') {
+                medicos = ['Psic. Laura Ruiz', 'Psic. José Torres', 'Psic. Marta Jiménez'];
+            }
+
+            // Agregar los médicos correspondientes al select
+            medicos.forEach(medico => {
+                const option = document.createElement('option');
+                option.value = medico;
+                option.textContent = medico;
+                medicosSelect.appendChild(option);
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <div class="content">
-            <!-- Título "Citas" agregado -->
             <h2>Citas</h2>
             <form class="form">
-                <input type="text" placeholder="Cédula">
-                <input type="text" placeholder="Teléfono">
-                <input type="date" placeholder="Calendario">
-                <textarea placeholder="Descripción"></textarea>
-                <input type="email" placeholder="Correo Electrónico">
-                
-                <!-- Selector para profesionales -->
-                <select id="profesional" name="profesional">
-                    <option value="" disabled selected>Especialistas</option> <!-- Opciones no seleccionables -->
+                <input type="text" placeholder="Cédula" required>
+                <input type="text" placeholder="Teléfono" required>
+                <input type="date" placeholder="Calendario" required>
+                <textarea placeholder="Descripción" required></textarea>
+                <input type="email" placeholder="Correo Electrónico" required>
+
+                <!-- Primer select para elegir la especialidad -->
+                <select id="profesional" name="profesional" required onchange="mostrarMedicos()">
+                    <option value="" disabled selected>Selecciona un especialista</option>
                     <option value="oftalmologo">Oftalmólogo</option>
                     <option value="optometrista">Optometrista especializado en baja visión</option>
                     <option value="psicologo">Psicólogo</option>
+                </select>
+
+                <!-- Segundo select para elegir el médico (vacío por defecto) -->
+                <select id="medico" name="medico" required>
+                    <option value="" disabled selected>Selecciona un médico</option>
                 </select>
 
                 <button type="submit">Agendar Cita</button>
