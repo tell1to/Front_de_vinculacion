@@ -32,6 +32,9 @@ import { LayoutService } from './service/app.layout.service';
 				<ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
 					<li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
 				</ng-template>
+
+        
+
 			</ul>
 		</ng-container>
     `,

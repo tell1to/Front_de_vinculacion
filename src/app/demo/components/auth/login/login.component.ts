@@ -17,7 +17,7 @@ export class LoginComponent {
 
     valCheck: string[] = ['remember'];
 
-    password!: string;
+    clave!: string;
 
     constructor(public layoutService: LayoutService) { }
 }
