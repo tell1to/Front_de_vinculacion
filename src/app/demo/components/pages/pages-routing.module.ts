@@ -14,10 +14,10 @@ import { RouterModule } from '@angular/router';
 
 
         { path: 'history', loadChildren: () => import('./history/historydemo.module').then(m => m.HistoryDemoModule) },
+        { path: 'new-history', loadChildren: () => import('./new_history/new_historydemo.module').then(m => m.NewHistoryDemoModule) },
         { path: '**', redirectTo: '/notfound' }
 
     ])],
     exports: [RouterModule]
 })
 export class PagesRoutingModule { }
-
