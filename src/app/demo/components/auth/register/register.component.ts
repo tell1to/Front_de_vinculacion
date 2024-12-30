@@ -25,10 +25,10 @@ export class RegisterComponent {
 
     verificarClaves() {
         if (this.clave === this.repiteClave) {
-            // Redirige a la página de inicio
+            
             this.router.navigate(['/']);
         } else {
-            // Muestra un mensaje de error
+            
             alert('Las contraseñas no coinciden');
         }
     }
