@@ -43,17 +43,17 @@
                 <textarea placeholder="Descripción" required></textarea>
                 <input type="email" placeholder="Correo Electrónico" required>
 
+                <!-- Segundo select para elegir el médico (vacío por defecto) -->
+                <select id="medico" name="medico" required>
+                    <option value="" disabled selected>Selecciona un médico</option>
+                </select>
+
                 <!-- Primer select para elegir la especialidad -->
                 <select id="profesional" name="profesional" required onchange="mostrarMedicos()">
                     <option value="" disabled selected>Selecciona un especialista</option>
                     <option value="oftalmologo">Oftalmólogo</option>
                     <option value="optometrista">Optometrista especializado en baja visión</option>
                     <option value="psicologo">Psicólogo</option>
-                </select>
-
-                <!-- Segundo select para elegir el médico (vacío por defecto) -->
-                <select id="medico" name="medico" required>
-                    <option value="" disabled selected>Selecciona un médico</option>
                 </select>
 
                 <button type="submit">Agendar Cita</button>
