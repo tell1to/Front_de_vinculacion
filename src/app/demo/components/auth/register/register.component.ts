@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
+import { RegisterService } from './register.service';
 
 @Component({
     selector: 'app-login',
@@ -17,19 +18,21 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 export class RegisterComponent {
 
     valCheck: string[] = ['remember'];
-
+    email: string = '';
     clave!: string;
-    repiteClave!: string;
+    identificacion: string = '';
+    nombreC: string = '';
+    
 
-    constructor(private router: Router, public layoutService: LayoutService) { }
+    constructor(private registerService:RegisterService, public layoutService: LayoutService) { }
 
-    verificarClaves() {
-        if (this.clave === this.repiteClave) {
-            
-            this.router.navigate(['/']);
-        } else {
-            
-            alert('Las contraseñas no coinciden');
-        }
+    async verificarClaves() {
+        try {
+            const result = await this.registerService.register({ email: this.email, password: this.clave, identification: this.identificacion, name: this.nombreC });
+            console.log('Registro exitoso:', result);
+           
+          } catch (error) {
+            console.error('Error al iniciar sesión:', error);
+          }
     }
 }
