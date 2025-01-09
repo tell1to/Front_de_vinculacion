@@ -1,0 +1,44 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la ventana */
+  }
+  
+  .budget-create {
+    width: 50%; /* Ajusta el ancho según sea necesario */
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Espacio entre los grupos de formularios */
+  }
+  
+  label {
+    margin-right: 10px; /* Espacio entre el texto y el input */
+    min-width: 150px; /* Ajusta esto según sea necesario para alinear las etiquetas */
+  }
+  
+  input, p-inputNumber, p-dropdown, p-inputTextarea {
+    flex-grow: 1; /* Permite que los inputs ocupen el espacio disponible */
+  }
+  
+  .buttons-group {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .buttons-group button {
+    margin-right: 3px; /* Espacio de 3px entre los botones */
+  }
+  
+  .buttons-group button:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último botón */
+  }
+  

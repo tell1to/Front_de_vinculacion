@@ -1,0 +1,98 @@
+<div class="grid justify-content-center align-items-center surface-section">
+    <div class="col-12 md:col-8 lg:col-6">
+        <div class="card">
+            <h3 class="text-center text-primary">Crear Nueva Historia Clínica</h3>
+            <p class="text-center text-secondary">
+                Ingresa la información requerida para registrar una nueva historia clínica.
+            </p>
+            <form (ngSubmit)="saveHistory()" #historyForm="ngForm" class="p-fluid">
+
+                <!-- Nombre del Paciente -->
+                <div class="field">
+                    <label for="name" class="font-bold">Nombre del Paciente</label>
+                    <input 
+                        id="name" 
+                        type="text" 
+                        pInputText 
+                        [(ngModel)]="newHistory.name" 
+                        name="name" 
+                        class="p-inputtext-lg" 
+                        required 
+                        placeholder="Ingrese el nombre completo"
+                    />
+                </div>
+
+                <!-- Edad -->
+                <div class="field">
+                    <label for="age" class="font-bold">Edad</label>
+                    <input 
+                        id="age" 
+                        type="number" 
+                        pInputText 
+                        [(ngModel)]="newHistory.age" 
+                        name="age" 
+                        class="p-inputtext-lg" 
+                        required 
+                        placeholder="Ingrese la edad del paciente"
+                    />
+                </div>
+
+                <!-- Sexo -->
+                <div class="field">
+                    <label for="gender" class="font-bold">Sexo</label>
+                    <p-dropdown 
+                        id="gender" 
+                        [options]="genders" 
+                        [(ngModel)]="newHistory.gender" 
+                        name="gender" 
+                        class="p-inputtext-lg" 
+                        placeholder="Seleccione el sexo" 
+                        required>
+                    </p-dropdown>
+                </div>
+
+                <!-- Diagnóstico -->
+                <div class="field">
+                    <label for="diagnosis" class="font-bold">Diagnóstico</label>
+                    <textarea 
+                        id="diagnosis" 
+                        pInputTextarea 
+                        [(ngModel)]="newHistory.diagnosis" 
+                        name="diagnosis" 
+                        class="p-inputtextarea-lg" 
+                        rows="4" 
+                        placeholder="Describa el diagnóstico del paciente" 
+                        required>
+                    </textarea>
+                </div>
+
+                <!-- Tratamiento -->
+                <div class="field">
+                    <label for="treatment" class="font-bold">Tratamiento</label>
+                    <textarea 
+                        id="treatment" 
+                        pInputTextarea 
+                        [(ngModel)]="newHistory.treatment" 
+                        name="treatment" 
+                        class="p-inputtextarea-lg" 
+                        rows="4" 
+                        placeholder="Detalle el tratamiento sugerido" 
+                        required>
+                    </textarea>
+                </div>
+
+                <!-- Botón Guardar -->
+                <div class="flex justify-content-center">
+                    <button 
+                        type="submit" 
+                        pButton 
+                        label="Guardar Historia" 
+                        icon="pi pi-save" 
+                        class="p-button-lg p-button-success"
+                        [disabled]="!historyForm.form.valid">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

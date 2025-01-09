@@ -1,0 +1,29 @@
+<div class="budget-list">
+  <h2>Lista de Presupuestos</h2>
+  <button pButton type="button" label="Crear Presupuesto" icon="pi pi-plus" routerLink="/pages/budget/create"></button>
+  <p-table [value]="budgets">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Total</th>
+        <th>Descuento</th>
+        <th>Total Final</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-budget>
+      <tr>
+        <td>{{ budget.id }}</td>
+        <td>{{ budget.total | currency }}</td>
+        <td>{{ budget.discount | currency }}</td>
+        <td>{{ budget.finalTotal | currency }}</td>
+        <td>{{ budget.status }}</td>
+        <td>
+          <button pButton type="button" icon="pi pi-info-circle" class="p-button-info" [routerLink]="['/pages/budget', budget.id]" label="Detalles"></button>
+          <button pButton type="button" icon="pi pi-trash" class="p-button-danger" (click)="deleteBudget(budget.id)" label="Eliminar"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

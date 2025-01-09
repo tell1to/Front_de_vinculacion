@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamiento de Citas</title>
+    <link rel="stylesheet" href="cita.component.scss">
+    <link rel="stylesheet" href="cita.component.scss">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- Título "Citas" agregado -->
+            <h2>Citas</h2>
+            <form class="form">
+                <input type="text" placeholder="Cédula">
+                <input type="text" placeholder="Teléfono">
+                <input type="date" placeholder="Calendario">
+                <textarea placeholder="Descripción"></textarea>
+                <input type="email" placeholder="Correo Electrónico">
+                
+                <!-- Selector para profesionales -->
+                <select id="profesional" name="profesional">
+                    <option value="" disabled selected>Especialistas</option> <!-- Opciones no seleccionables -->
+                    <option value="oftalmologo">Oftalmólogo</option>
+                    <option value="optometrista">Optometrista especializado en baja visión</option>
+                    <option value="psicologo">Psicólogo</option>
+                </select>
+
+                <button type="submit">Agendar Cita</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
