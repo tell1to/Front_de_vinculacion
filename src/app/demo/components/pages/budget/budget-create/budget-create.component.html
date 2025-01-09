@@ -3,7 +3,7 @@
     <h2>Crear Presupuesto</h2>
     <form (ngSubmit)="onSubmit()" #budgetForm="ngForm" class="form">
       <div class="form-group">
-        <label for="total">Total</label>
+        <label for="total">Totales</label>
         <p-inputNumber id="total" name="total" [(ngModel)]="budget.total" mode="currency" currency="USD" locale="es-EC" [min]="0" required></p-inputNumber>
       </div>
       <div class="form-group">
