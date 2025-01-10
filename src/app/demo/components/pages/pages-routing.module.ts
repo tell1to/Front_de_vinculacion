@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
         { path: 'cita', loadChildren: () => import ('./cita/cita.module').then(m => m.CitaModule)},
         { path: 'admin', loadChildren: () => import ('./admin/admin.module').then(m => m.AdminModule)},
         {path: 'budget', loadChildren: () => import('./budget/budget.module').then(m => m.BudgetModule)},
+        { path: 'portalpacientes', loadChildren: () => import('./portalpacientes/portalpacientes.module').then(m => m.PortalpacientesModule) },
 
         { path: 'history', loadChildren: () => import('./history/historydemo.module').then(m => m.HistoryDemoModule) },
         { path: 'new-history', loadChildren: () => import('./new_history/new_historydemo.module').then(m => m.NewHistoryDemoModule) },
