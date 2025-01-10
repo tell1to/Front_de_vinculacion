@@ -21,6 +21,30 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             
+            {
+                label: 'Budget',
+                items: [
+                    {
+                        label: 'Budget',
+                        icon: 'pi pi-fw pi-dollar',
+                        items: [
+                            {label: 'Budget Create',
+                                icon: 'pi pi-fw pi-plus',
+                                routerLink: ['/pages/budget/create'],
+                                },
+                                {label: 'Budget List',
+                                icon: 'pi pi-fw pi-list',
+                                routerLink: ['/pages/budget/'],
+                                },
+                                {label: 'Budget Detail',
+                                icon: 'pi pi-fw pi-eye',
+                                routerLink: ['/pages/budget/detail'],
+                                }
+                        ]
+                    }
+
+                ]
+            },
             
             {
                 label: 'Pages',

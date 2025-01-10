@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Budget } from './budget.model';
+import { environment } from 'src/environments/environment';
+import axios from 'axios';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BudgetService {
-  private apiUrl = 'http://localhost:3000/budgets';
+  private apiUrl = environment.api + '/budgets';
 
   constructor(private http: HttpClient) {}
 
@@ -30,4 +32,8 @@ export class BudgetService {
   deleteBudget(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+  async getservice( ){
+    const service=await axios.get(`${this.apiUrl}`);
+    console.log(service.data);
+    return service.data;}
 }

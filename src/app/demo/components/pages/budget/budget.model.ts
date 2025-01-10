@@ -5,6 +5,7 @@ export interface Budget {
     finalTotal: number;
     observations: string;
     status: string;
+    services?: string;
     createdAt: Date;
     updatedAt: Date;
   }
