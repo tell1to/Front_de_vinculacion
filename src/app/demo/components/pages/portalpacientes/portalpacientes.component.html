@@ -1,0 +1,160 @@
+<div class="artemania-categorias">
+    <h1 style="text-align: center; font-family: 'Roboto', sans-serif; color: #333;">Portal para Pacientes - Visualizar cita</h1>
+    
+    <!-- Botón Agregar Cita -->
+<div style="display: flex; justify-content: center; margin: 1rem 0;">
+    <button pButton (click)="mostrarDialogo()" class="p-button-raised p-button-rounded p-button-primary">
+        <i class="pi pi-plus"></i>&nbsp;Nueva Cita
+    </button>
+</div>
+
+
+    <!-- Grid de Categorías -->
+    <div class="categorias-grid" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+        <div *ngFor="let categoria of categorias" class="categoria-card" style="width: 300px; border: 1px solid #ddd; border-radius: 8px; padding: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 1.5rem; color: #5a5a5a; text-align: center;">{{categoria.nombre}}</h2>
+            <p style="text-align: center; color: #777; font-size: 1rem;">{{categoria.detalle}}</p>
+            <div style="display: flex; justify-content: space-around; margin-top: 1rem;">
+                <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-success"
+                    (click)="editarCategoria(categoria)"></button>
+                <button pButton icon="pi pi-trash" class="p-button-rounded p-button-danger"
+                    (click)="eliminarCategoria(categoria)"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dialog -->
+    <!-- Dialog -->
+<p-dialog 
+header="Datos de cita" 
+[(visible)]="dialog_visible" 
+[modal]="true"
+[breakpoints]="{ '1199px': '60vw', '575px': '85vw' }" 
+[style]="{ width: '50vw', padding: '2rem' }" 
+[draggable]="false"
+[resizable]="false" 
+class="p-fluid"
+>
+<form [formGroup]="categoriaForm">
+    <!-- Campo de Nombre -->
+    <div class="field" style="margin-bottom: 1rem;">
+        <label for="name" style="font-weight: bold;">Apellido y Nombre</label>
+        <input 
+            type="text" 
+            pInputText 
+            id="name" 
+            required 
+            autofocus 
+            formControlName="nombre" 
+            style="width: 100%; border-radius: 8px; padding: 0.5rem;"
+        />
+    </div>
+
+    <!-- Campo de Cédula -->
+    <div class="field" style="margin-bottom: 1rem;">
+        <label for="cedula" style="font-weight: bold;">Cédula</label>
+        <input 
+            type="text" 
+            pInputText 
+            id="cedula" 
+            required 
+            formControlName="detalle" 
+            style="width: 100%; border-radius: 8px; padding: 0.5rem;"
+        />
+    </div>
+
+    <!-- Campo de Teléfono -->
+    <div class="field" style="margin-bottom: 1rem;">
+        <label for="telefono" style="font-weight: bold;">Teléfono</label>
+        <input 
+            type="text" 
+            pInputText 
+            id="telefono" 
+            required 
+            formControlName="detalle" 
+            style="width: 100%; border-radius: 8px; padding: 0.5rem;"
+        />
+    </div>
+
+    <!-- Campo de Especialista -->
+    <div class="field" style="margin-bottom: 1rem;">
+        <label for="especialista" style="font-weight: bold;">Especialista</label>
+        <input 
+            type="text" 
+            pInputText 
+            id="especialista" 
+            required 
+            formControlName="detalle" 
+            style="width: 100%; border-radius: 8px; padding: 0.5rem;"
+        />
+    </div>
+
+    <!-- Campo de Correo Electrónico -->
+    <div class="field" style="margin-bottom: 1rem;">
+        <label for="correo" style="font-weight: bold;">Correo Electrónico</label>
+        <input 
+            type="email" 
+            pInputText 
+            id="correo" 
+            required 
+            formControlName="detalle" 
+            style="width: 100%; border-radius: 8px; padding: 0.5rem;"
+        />
+    </div>
+
+    <!-- Campo de Descripción -->
+    <div class="field" style="margin-bottom: 1rem;">
+        <label for="descripcion" style="font-weight: bold;">Descripción</label>
+        <textarea 
+            pInputTextarea 
+            id="descripcion" 
+            required 
+            formControlName="detalle" 
+            rows="4"
+            style="width: 100%; border-radius: 8px; padding: 0.5rem;"
+        ></textarea>
+    </div>
+</form>
+
+<!-- Footer del Diálogo -->
+<ng-template pTemplate="footer">
+    <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+        <button 
+            pButton 
+            pRipple 
+            label="Cancelar" 
+            icon="pi pi-times" 
+            class="p-button-text"
+            (click)="dialog_visible = false"
+            style="padding: 0.75rem 1.5rem; font-size: 1rem;"
+        ></button>
+        <button 
+            pButton 
+            pRipple 
+            label="Enviar" 
+            icon="pi pi-check" 
+            class="p-button-primary"
+            (click)="guardarCategoria()"
+            style="padding: 0.75rem 1.5rem; font-size: 1rem;"
+        ></button>
+    </div>
+</ng-template>
+</p-dialog>
+
+</div>
+<br>
+<br>
+
+
+
+<div class="categoria-card-cuadro">
+    <h2>DETALLES DE LA CITA</h2>
+    <p><strong>Nombre:</strong> <span> Juan Benalcazar</span></p>
+    <p><strong>Cédula:</strong> <span> 12345678</span></p>
+    <p><strong>Teléfono:</strong> <span> 099 071 7890</span></p>
+    <p><strong>Fecha:</strong> 01/02/2025<span> </span></p>
+    <p><strong>Especialista:</strong> <span> Oftalmólogo</span></p>
+    <p><strong>Médico:</strong> <span> Alan Ortega</span></p>
+    <p><strong>Correo Electrónico:</strong> <span>juanbenalcazar&commat;gmail.com</span></p>
+    <p><strong>Descripción:</strong> <span> Chequeo Operación Anillos Intracorneales</span></p>
+</div>
