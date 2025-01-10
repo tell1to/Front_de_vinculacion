@@ -87,6 +87,17 @@ export class AppMenuComponent implements OnInit {
                         icon: 'pi pi-fw pi-pencil',
                         routerLink: ['/pages/crud']
                     },
+                    {
+                        label: 'Usuario Portal',
+                        icon: 'pi pi-heart',
+                        items: [
+                            {
+                                label: 'Portal para Pacientes',
+                                icon: 'pi pi-users',
+                                routerLink: ['/pages/portalpacientes']
+                            },
+                        ]
+                    },
                     
                     {
                         label: 'No encontrado',
