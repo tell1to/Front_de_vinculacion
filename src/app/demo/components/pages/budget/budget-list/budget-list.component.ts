@@ -17,13 +17,13 @@ export class BudgetListComponent implements OnInit {
   }
 
   loadBudgets(): void {
-    this.budgetService.getBudgets().subscribe((data: Budget[]) => {
+    this.budgetService.getBudget().then((data: Budget[]) => {
       this.budgets = data;
     });
   }
 
   deleteBudget(id: string): void {
-    this.budgetService.deleteBudget(id).subscribe(() => {
+    this.budgetService.deleteBudget(id).then(() => {
       this.loadBudgets();  // Recarga la lista de presupuestos después de eliminar
     });
   }

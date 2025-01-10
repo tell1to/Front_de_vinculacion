@@ -19,7 +19,7 @@ export class BudgetDetailComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.budgetService.getBudget(id).subscribe((data: Budget) => {
+      this.budgetService.getBudget().then((data: Budget) => {
         this.budget = data;
       });
     }

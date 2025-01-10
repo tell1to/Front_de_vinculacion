@@ -11,27 +11,25 @@ import axios from 'axios';
 export class BudgetService {
   private apiUrl = environment.api + '/budgets';
 
-  constructor(private http: HttpClient) {}
+  async getBudget() {
+    const response=await axios.post(`${this.apiUrl}`);
+    console.log(response.data);
+    return response.data
+  }
+  async deleteBudget(id:any) {
+    const response=await axios.post(`${this.apiUrl}, {id}`);
+    console.log(response.data);
+    return response.data
+  }
+  
+  
 
-  getBudgets(): Observable<Budget[]> {
-    return this.http.get<Budget[]>(this.apiUrl);
+  async createBudget(budget: Budget) {
+    const response=await axios.post(`${this.apiUrl}, {budget}`);
+    console.log(response.data);
+    return response.data
   }
 
-  getBudget(id: string): Observable<Budget> {
-    return this.http.get<Budget>(`${this.apiUrl}/${id}`);
-  }
-
-  createBudget(budget: Budget): Observable<Budget> {
-    return this.http.post<Budget>(this.apiUrl, budget);
-  }
-
-  updateBudget(id: string, budget: Budget): Observable<Budget> {
-    return this.http.patch<Budget>(`${this.apiUrl}/${id}`, budget);
-  }
-
-  deleteBudget(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
-  }
   async getservice( ){
     const service=await axios.get(`${this.apiUrl}`);
     console.log(service.data);
