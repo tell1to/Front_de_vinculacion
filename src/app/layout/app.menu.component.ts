@@ -52,7 +52,7 @@ export class AppMenuComponent implements OnInit {
                 items: [
                     
                     {
-                        label: 'Accesos',
+                        label: 'Accesos-Admin',
                         icon: 'pi pi-fw pi-user',
                         items: [
                             {
