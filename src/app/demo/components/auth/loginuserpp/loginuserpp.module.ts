@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginuserppComponent } from './loginuserpp.component';
 import { LoginuserppRoutingModule } from './loginuserpp-routing.module';
-import { PasswordModule } from 'primeng/password'; // Importa el módulo
+import { PasswordModule } from 'primeng/password'; 
 import { ButtonModule } from 'primeng/button';
 
 @NgModule({
@@ -12,7 +12,7 @@ import { ButtonModule } from 'primeng/button';
   imports: [
     CommonModule,
     LoginuserppRoutingModule,
-    PasswordModule, // Agrégalo aquí
+    PasswordModule, 
     ButtonModule
   ]
 })
