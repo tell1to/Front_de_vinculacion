@@ -78,11 +78,24 @@ class="p-fluid"
 
     <!-- Campo de Especialista -->
     <div class="field" style="margin-bottom: 1rem;">
-        <label for="especialista" style="font-weight: bold;">Especialista</label>
+        <label for="especialidad" style="font-weight: bold;">Especialidad</label>
         <input 
             type="text" 
             pInputText 
-            id="especialista" 
+            id="especialidad" 
+            required 
+            formControlName="detalle" 
+            style="width: 100%; border-radius: 8px; padding: 0.5rem;"
+        />
+    </div>
+
+    <!-- Campo de Medico -->
+    <div class="field" style="margin-bottom: 1rem;">
+        <label for="medico" style="font-weight: bold;">Médico</label>
+        <input 
+            type="text" 
+            pInputText 
+            id="medico" 
             required 
             formControlName="detalle" 
             style="width: 100%; border-radius: 8px; padding: 0.5rem;"
@@ -149,12 +162,12 @@ class="p-fluid"
 
 <div class="categoria-card-cuadro">
     <h2>DETALLES DE LA CITA</h2>
-    <p><strong>Nombre:</strong> <span> Juan Benalcazar</span></p>
+    <p><strong>Apellido y Nombre:</strong> <span> Benalcazar Juan</span></p>
     <p><strong>Cédula:</strong> <span> 12345678</span></p>
     <p><strong>Teléfono:</strong> <span> 099 071 7890</span></p>
-    <p><strong>Fecha:</strong> 01/02/2025<span> </span></p>
-    <p><strong>Especialista:</strong> <span> Oftalmólogo</span></p>
+    <p><strong>Fecha:</strong> 16/01/2025<span> </span></p>
+    <p><strong>Especialidad:</strong> <span> Oftalmología</span></p>
     <p><strong>Médico:</strong> <span> Alan Ortega</span></p>
-    <p><strong>Correo Electrónico:</strong> <span>juanbenalcazar&commat;gmail.com</span></p>
+    <p><strong>Correo Electrónico:</strong> <span> juanbenalcazar&commat;gmail.com</span></p>
     <p><strong>Descripción:</strong> <span> Chequeo Operación Anillos Intracorneales</span></p>
 </div>
