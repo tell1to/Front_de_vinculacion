@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<p-dialog header="Agregar Detalle de Presupuesto" [(visible)]="displayModal">
+<p-dialog header="Agregar Detalle de Presupuesto" [(visible)]="displayModal" [modal]="true">
   <form (ngSubmit)="addDetail()" #detailForm="ngForm">
     <div class="form-group">
       <label for="service">Servicio</label>
@@ -28,8 +28,8 @@
     </div>
     <div class="form-group">
       <label for="observations">Observaciones</label>
-      <!--<p-inputTextarea id="observations" name="observations" [(ngModel)]="budgetDetail.observations"></p-inputTextarea>-->
-      <input type="text" pInputTextTarea id="observations" name="observations" [(ngModel)]="budgetDetail.observations">
+      <p-inputTextarea id="observations" name="observations" [(ngModel)]="budgetDetail.observations"></p-inputTextarea>
+      <!--<input type="text" pInputTextTarea id="observations" name="observations" [(ngModel)]="budgetDetail.observations">-->
     </div>
     <div class="form-group">
       <label for="discount">Descuento</label>
