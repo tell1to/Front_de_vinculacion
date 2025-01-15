@@ -7,7 +7,7 @@ import { BudgetCreateComponent } from './budget-create/budget-create.component';
 const routes: Routes = [
   { path: '', component: BudgetListComponent },
   { path: 'create', component: BudgetCreateComponent },
-  { path: 'detail', component: BudgetDetailComponent },
+  { path: 'Obv', component: BudgetDetailComponent },
 ];
 
 @NgModule({

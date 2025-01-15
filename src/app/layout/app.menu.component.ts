@@ -36,10 +36,7 @@ export class AppMenuComponent implements OnInit {
                                 icon: 'pi pi-fw pi-list',
                                 routerLink: ['/pages/budget/'],
                                 },
-                                {label: 'Budget Detail',
-                                icon: 'pi pi-fw pi-eye',
-                                routerLink: ['/pages/budget/detail'],
-                                }
+                                
                         ]
                     }
 
@@ -65,7 +62,7 @@ export class AppMenuComponent implements OnInit {
                                 icon: 'pi pi-fw pi-user-minus',
                                 routerLink: ['/auth/register']
                             },
-                            {
+                           /* {
                                 label: 'Error',
                                 icon: 'pi pi-fw pi-times-circle',
                                 routerLink: ['/auth/error']
@@ -74,19 +71,20 @@ export class AppMenuComponent implements OnInit {
                                 label: 'Access Denied',
                                 icon: 'pi pi-fw pi-lock',
                                 routerLink: ['/auth/access']
-                            }
+                            },*/
+                            
                         ]
                     },
                     {
                         label: 'Admin',
                         icon: 'pi pi-fw pi-user-edit',
                         routerLink: ['/pages/admin']
-                    },                   
+                    }, /*                  
                     {
                         label: 'Crud',
                         icon: 'pi pi-fw pi-pencil',
                         routerLink: ['/pages/crud']
-                    },
+                    },*/
                     {
                         label: 'Usuario Portal',
                         icon: 'pi pi-heart',
