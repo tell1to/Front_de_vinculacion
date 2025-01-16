@@ -1,0 +1,21 @@
+<p-dialog header="Add Detail" [(visible)]="visible" [modal]="true" [responsive]="true" (onHide)="resetForm() ">
+  <form [formGroup]="detailForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Service:</label>
+      <p-dropdown [options]="services" formControlName="service" optionLabel="name" (onChange)="onServiceChange($event.value)" ></p-dropdown>
+    </div>
+    <div>
+      <label>Discount (%):</label>
+      <input type="number" formControlName="discount" (input)="onDiscountChange()" />
+    </div>
+    <div>
+      <label>Observations:</label>
+      <input type="text" formControlName="observations" />
+    </div>
+    <div>
+      <label>Cost:</label>
+      <input type="number" formControlName="cost" disabled />
+    </div>
+    <button type="submit" [disabled]="!detailForm.valid">Add Detail</button>
+  </form>
+</p-dialog>

@@ -1,40 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BudgetFormComponent } from './budget-form/budget-form.component';
 import { BudgetRoutingModule } from './budget-routing.module';
-import { BudgetListComponent } from './budget-list/budget-list.component';
-import { BudgetDetailComponent } from './budget-detail/budget-detail.component';
-import { BudgetCreateComponent } from './budget-create/budget-create.component';
 import { BudgetService } from './budget.service';
-import { InputNumberModule } from 'primeng/inputnumber';
-import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
-import { ButtonModule } from 'primeng/button';
-import { TableModule } from 'primeng/table';
-import { PaginatorModule } from 'primeng/paginator';
 import { DialogModule } from 'primeng/dialog';
-
-
+import { ButtonModule } from 'primeng/button';
+import { AddDetailFormComponent } from './add-detail-modal/add-detail-form.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
-    BudgetListComponent,
-    BudgetDetailComponent,
-    BudgetCreateComponent
+    BudgetFormComponent,
+    AddDetailFormComponent
   ],
   imports: [
     CommonModule,
-    FormsModule,
     ReactiveFormsModule,
-    BudgetRoutingModule,
-    InputNumberModule,
-    InputTextareaModule,
-    DropdownModule,
-    ButtonModule,
+    FormsModule,
     TableModule,
-    PaginatorModule,
-    DialogModule
+    BudgetRoutingModule,
+    DropdownModule,
+    DialogModule,
+    ButtonModule
   ],
   providers: [BudgetService]
 })
-export class BudgetModule {}
+export class BudgetModule { }
