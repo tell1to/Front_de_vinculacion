@@ -40,7 +40,8 @@ export class BudgetFormComponent implements OnInit {
   }
 
   openModal(): void {
-    this.displayModal = true;
+    this.displayModal =! this.displayModal;
+
   }
 
   closeModal(): void {
@@ -53,6 +54,7 @@ export class BudgetFormComponent implements OnInit {
     const discountAmount = (serviceCost * detail.discount) / 100;
     detail.cost = serviceCost - discountAmount;
     detail.service = detail.service.name;
+    
 
     // Agregar el detalle al presupuesto
     this.budgetDetails.push(detail);

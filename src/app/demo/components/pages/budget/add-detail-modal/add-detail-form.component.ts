@@ -52,8 +52,9 @@ export class AddDetailFormComponent {
   }
 
   resetForm(): void {
-    this.detailForm.reset();
+   
     this.detailForm.get('discount')?.setValue(0);
     this.detailForm.get('cost')?.setValue(0);
+    this.detailForm.reset();
   }
 }

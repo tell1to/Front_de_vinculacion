@@ -1,6 +1,5 @@
-<button (click)="openModal()">Add Detail</button>
-
-<p-table [value]="budgetDetails">
+<!-- Tabla de detalles del presupuesto -->
+<p-table [value]="budgetDetails" responsiveLayout="scroll" class="custom-table">
   <ng-template pTemplate="header">
     <tr>
       <th>Service</th>
@@ -19,19 +18,23 @@
   </ng-template>
 </p-table>
 
-<p-dialog header="Budget Details" [(visible)]="displayModal" [modal]="true" [style]="{width: '80vw', height: '80vh'}"  [responsive]="true">
-  <app-add-detail-form 
-    [visible]="displayModal" 
-    [services]="services" 
-    (detailAdded)="addDetail($event)">
-  </app-add-detail-form>
-</p-dialog>
+<!-- Diálogo de detalles del presupuesto -->
+<app-add-detail-form
+  [visible]="displayModal"
+  [services]="services"
+  (detailAdded)="addDetail($event)"
+  (onHide)="closeModal()">
+</app-add-detail-form>
 
-<div>
+<!-- Resumen del presupuesto -->
+<div class="summary">
   <p>Total: {{ total }}</p>
-  <p>Discount: <input type="number" [(ngModel)]="discount" (ngModelChange)="calculateFinalTotal()"></p>
+  <p>Discount: <input type="number" [(ngModel)]="discount" (ngModelChange)="calculateFinalTotal()" class="custom-input"></p>
   <p>Final Total: {{ finalTotal }}</p>
-  <p>Observations: <input type="text" [(ngModel)]="observations"></p>
+  <p>Observations: <input type="text" [(ngModel)]="observations" class="custom-input"></p>
 </div>
 
-<button (click)="submitForm()">Submit Budget</button>
+<div class="buttons">
+  <button (click)="openModal()" class="modal-button p-button p-component custom-add-button">Add Detail</button>
+  <button (click)="submitForm()" class="p-button p-component custom-submit-button">Submit Budget</button>
+</div>

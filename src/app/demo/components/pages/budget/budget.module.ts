@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { BudgetFormComponent } from './budget-form/budget-form.component';
 import { BudgetRoutingModule } from './budget-routing.module';
 import { BudgetService } from './budget.service';
@@ -9,6 +10,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { AddDetailFormComponent } from './add-detail-modal/add-detail-form.component';
 import { TableModule } from 'primeng/table';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { TableModule } from 'primeng/table';
     BudgetRoutingModule,
     DropdownModule,
     DialogModule,
-    ButtonModule
+    ButtonModule,
+    
+    
   ],
   providers: [BudgetService]
 })

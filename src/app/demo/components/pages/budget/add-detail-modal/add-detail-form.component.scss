@@ -1,0 +1,45 @@
+.detail-dialog {
+  .ui-dialog {
+    width: 50vw;
+    height: 30vh;
+    font-size: 1.2rem;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+
+  .p-field {
+    margin-bottom: 15px; /* Espacio entre los campos */
+  }
+
+  .custom-input {
+    width: 100%; /* Ancho completo */
+    padding: 0.5rem; /* Padding interno */
+    border: 1px solid #ced4da; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1.2rem; /* Tamaño de texto */
+    color: #495057; /* Color del texto */
+    background-color: #fff; /* Color de fondo */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:focus {
+      border-color: #80bdff; /* Color del borde al enfocar */
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Sombra al enfocar */
+    }
+
+    &:disabled {
+      background-color: #e9ecef; /* Color de fondo cuando está deshabilitado */
+    }
+
+    &::placeholder {
+      color: #6c757d; /* Color del placeholder */
+    }
+  }
+
+  .ui-button {
+    font-size: 1.2rem; /* Tamaño de texto del botón */
+    padding: 0.6rem 1.2rem; /* Padding alrededor del botón */
+  }
+}

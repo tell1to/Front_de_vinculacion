@@ -1,99 +1,140 @@
+/* Estilos existentes */
+
 .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Altura completa de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.budget-create {
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-right: 10px;
+  min-width: 150px;
+}
+
+input, p-inputNumber, p-dropdown, p-inputTextarea {
+  flex-grow: 1;
+}
+
+.buttons-group {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.buttons-group button {
+  margin-right: 3px;
+}
+
+.buttons-group button:last-child {
+  margin-right: 0;
+}
+
+.custom-input {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 100%;
+  color: #495057;
+  background-color: #fff;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
-  
-  .budget-create {
-    width: 50%; /* Ajusta el ancho según sea necesario */
-    margin: auto;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: #fff;
+
+  &:disabled {
+    background-color: #e9ecef;
+    opacity: 1;
   }
-  
-  .form-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px; /* Espacio entre los grupos de formularios */
+
+  &::placeholder {
+    color: #6c757d;
+    opacity: 1;
   }
-  
-  label {
-    margin-right: 10px; /* Espacio entre el texto y el input */
-    min-width: 150px; /* Ajusta esto según sea necesario para alinear las etiquetas */
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
   }
-  
-  input, p-inputNumber, p-dropdown, p-inputTextarea {
-    flex-grow: 1; /* Permite que los inputs ocupen el espacio disponible */
+
+  th {
+    background-color: #f2f2f2;
+    color: black;
   }
-  
-  .buttons-group {
-    display: flex;
-    justify-content: flex-start;
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
   }
-  
-  .buttons-group button {
-    margin-right: 3px; /* Espacio de 3px entre los botones */
+
+  tr:hover {
+    background-color: #ddd;
   }
-  
-  .buttons-group button:last-child {
-    margin-right: 0; /* Elimina el margen derecho del último botón */
+}
+
+.summary {
+  padding: 1rem;
+  border-top: 1px solid #ced4da;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #495057;
+}
+
+.modal-button {
+  background-color: #409bfd;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
   }
-  .custom-input {
-    border: 1px solid #ced4da; // Borde del input
-    border-radius: 4px;        // Radio del borde
-    padding: 0.375rem 0.75rem; // Espaciado interno
-    font-size: 1rem;           // Tamaño de la fuente
-    line-height: 1.5;          // Altura de línea
-    width: 100%;               // Ancho del input
-    color: #495057;            // Color del texto
-    background-color: #fff;    // Color de fondo
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; // Transiciones
-  
-    &:focus {
-      border-color: #80bdff; // Color del borde al enfocar
-      outline: 0; // Elimina el contorno predeterminado
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); // Sombra al enfocar
-    }
-  
-    &:disabled {
-      background-color: #e9ecef; // Color de fondo cuando está deshabilitado
-      opacity: 1; // Opacidad
-    }
-  
-    &::placeholder {
-      color: #6c757d; // Color del placeholder
-      opacity: 1; // Opacidad del placeholder
-    }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
   }
-  .custom-input {
-    border: 1px solid #ced4da; // Borde del input
-    border-radius: 4px;        // Radio del borde
-    padding: 0.375rem 0.75rem; // Espaciado interno
-    font-size: 1rem;           // Tamaño de la fuente
-    line-height: 1.5;          // Altura de línea
-    width: 100%;               // Ancho del input
-    color: #495057;            // Color del texto
-    background-color: #fff;    // Color de fondo
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; // Transiciones
-  
-    &:focus {
-      border-color: #80bdff; // Color del borde al enfocar
-      outline: 0; // Elimina el contorno predeterminado
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); // Sombra al enfocar
-    }
-  
-    &:disabled {
-      background-color: #e9ecef; // Color de fondo cuando está deshabilitado
-      opacity: 1; // Opacidad
-    }
-  
-    &::placeholder {
-      color: #6c757d; // Color del placeholder
-      opacity: 1; // Opacidad del placeholder
-    }
-  }
-  
-  
+}
+
+/* Nuevos estilos para separar los botones y cambiar colores */
+.buttons {
+  display: flex;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.custom-add-button {
+  background-color: #4caf50; /* Verde para añadir detalle */
+  color: white;
+}
+
+.custom-submit-button {
+  background-color: #2196f3; /* Azul para enviar presupuesto */
+  color: white;
+}
