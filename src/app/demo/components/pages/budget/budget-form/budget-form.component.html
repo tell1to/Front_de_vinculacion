@@ -2,10 +2,10 @@
 <p-table [value]="budgetDetails" responsiveLayout="scroll" class="custom-table">
   <ng-template pTemplate="header">
     <tr>
-      <th>Service</th>
-      <th>Discount</th>
-      <th>Observations</th>
-      <th>Cost</th>
+      <th>Servicio</th>
+      <th>Descuento</th>
+      <th>Observaciones</th>
+      <th>Costo</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-detail>
@@ -28,13 +28,13 @@
 
 <!-- Resumen del presupuesto -->
 <div class="summary">
-  <p>Total: {{ total }}</p>
-  <p>Discount: <input type="number" [(ngModel)]="discount" (ngModelChange)="calculateFinalTotal()" class="custom-input"></p>
+  <p>Subtotal: {{ total }}</p>
+  <p>Descuento (%): <input type="number" [(ngModel)]="discount" (ngModelChange)="calculateFinalTotal()" class="custom-input"></p>
   <p>Final Total: {{ finalTotal }}</p>
-  <p>Observations: <input type="text" [(ngModel)]="observations" class="custom-input"></p>
+  <p>Observaciones: <input type="text" [(ngModel)]="observations" class="custom-input"></p>
 </div>
 
 <div class="buttons">
-  <button (click)="openModal()" class="modal-button p-button p-component custom-add-button">Add Detail</button>
-  <button (click)="submitForm()" class="p-button p-component custom-submit-button">Submit Budget</button>
+  <button (click)="openModal()" class="modal-button p-button p-component custom-add-button">Agrega detalle</button>
+  <button (click)="submitForm()" class="p-button p-component custom-submit-button">Enviar presupuesto</button>
 </div>
