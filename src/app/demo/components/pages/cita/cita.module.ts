@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CitaRoutingModule } from './cita-routing.module';
+import { FormsModule } from '@angular/forms';
+import { CitaComponent } from './cita.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [CitaComponent],
   imports: [
     CommonModule,
-    CitaRoutingModule
+    CitaRoutingModule,
+    FormsModule
   ]
 })
 export class CitaModule { }
