@@ -18,13 +18,9 @@ export class PortalpacientesComponent {
   patient: any = null
   appointment: any = null
   categoriaForm = new FormGroup({
-    //name: new FormControl(''),
     patient: new FormControl(''),
-    //identification: new FormControl(''),
-    //phone: new FormControl(''),
-    //speciality: new FormControl(''),
     doctor: new FormControl(''),
-    //email: new FormControl(''),
+    date: new FormControl(''),
     detalle: new FormControl(''),
   });
   getdoctors() {
