@@ -13,11 +13,13 @@ body {
   th, td {
     border: 1px solid var(--text-color);
     padding: 8px;
+    border-radius: 2px;
   }
 
   th {
-    background-color: var(--table-background);
+    /*background-color: var(--table-background);*/
     color: var(--table-text-color);
+    text-align: center;
   }
 
   tr:nth-child(even) {
@@ -25,8 +27,8 @@ body {
   }
 
   tr:hover {
-    background-color: var(--text-color);
-    color: var(--table-background);
+    /*background-color: var(--text-color);*/
+    color: var(--text-color);
   }
 }
 
@@ -59,6 +61,7 @@ label {
 
 input, p-inputNumber, p-dropdown, p-inputTextarea {
   flex-grow: 1;
+  color: var(--background-color);
 }
 
 .buttons-group {
@@ -74,6 +77,9 @@ input, p-inputNumber, p-dropdown, p-inputTextarea {
   margin-right: 0;
 }
 
+p {
+  color: var(--text-color);
+}
 .custom-input {
   border: 1px solid #ced4da;
   border-radius: 4px;
@@ -81,8 +87,8 @@ input, p-inputNumber, p-dropdown, p-inputTextarea {
   font-size: 1rem;
   line-height: 1.5;
   width: 100%;
-  color: #495057;
-  background-color: #fff;
+  color: var(--text-color);
+  background-color: var(--table-background);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   &:focus {

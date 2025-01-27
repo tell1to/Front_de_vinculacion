@@ -1,3 +1,6 @@
+<style>
+    img {border-radius: 50%;}
+</style>
 <div class="layout-topbar">
 
     <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
@@ -8,7 +11,7 @@
 <br>
 
     <a class="layout-topbar-logo" routerLink="">
-        <img src="assets/layout/images/{{layoutService.config().colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
+        <img src="https://scontent.fuio21-1.fna.fbcdn.net/v/t39.30808-1/380259218_713298424151221_4303267947827360588_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=103&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=jbsuK8JrZswQ7kNvgFLP3T4&_nc_zt=24&_nc_ht=scontent.fuio21-1.fna&_nc_gid=AsJU5-KlhNBvCkhxckdAtFr&oh=00_AYDXCymb3MTY9782kk8muCfVSoFpn88CMmdIa_qbjI1EdA&oe=679CEE7B" width="80px" height="80px" alt="logo">
         <span>Fundacion ecuatoriana vista para los ciegos</span>
     </a>
 
@@ -23,10 +26,10 @@
             <i class="pi pi-user"></i>
             <span>Profile</span>
         </button>
-        <button class="p-link layout-topbar-button" [routerLink]="'/documentation'">
+        <!--<button class="p-link layout-topbar-button" [routerLink]="''">
             <i class="pi pi-cog"></i>
             <span>Settings</span>
-        </button>
+        </button>-->
         
     </div>
 </div>

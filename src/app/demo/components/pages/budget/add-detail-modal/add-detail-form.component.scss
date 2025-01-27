@@ -19,8 +19,8 @@
     border: 1px solid #ced4da; /* Borde */
     border-radius: 4px; /* Bordes redondeados */
     font-size: 1.2rem; /* Tamaño de texto */
-    color: #495057; /* Color del texto */
-    background-color: #fff; /* Color de fondo */
+    color: var(--text-color);
+    background-color: var(--table-background);
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
     &:focus {
