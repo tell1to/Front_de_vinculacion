@@ -1,4 +1,34 @@
 /* Estilos existentes */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--table-background);
+  color: var(--table-text-color);
+  
+  th, td {
+    border: 1px solid var(--text-color);
+    padding: 8px;
+  }
+
+  th {
+    background-color: var(--table-background);
+    color: var(--table-text-color);
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--table-background);
+  }
+
+  tr:hover {
+    background-color: var(--text-color);
+    color: var(--table-background);
+  }
+}
 
 .form-container {
   display: flex;
@@ -69,29 +99,6 @@ input, p-inputNumber, p-dropdown, p-inputTextarea {
   &::placeholder {
     color: #6c757d;
     opacity: 1;
-  }
-}
-
-.custom-table {
-  width: 100%;
-  border-collapse: collapse;
-
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-
-  th {
-    background-color: #f2f2f2;
-    color: black;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-
-  tr:hover {
-    background-color: #ddd;
   }
 }
 
