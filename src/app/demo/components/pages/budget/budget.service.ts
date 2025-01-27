@@ -1,37 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Budget } from './budget.model';
 import { environment } from 'src/environments/environment';
 import axios from 'axios';
+import { from, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BudgetService {
-  private apiUrl = environment.api + '/budgets';
+  private apiUrl = environment.api;
 
-  async getBudget() {
-    const response=await axios.post(`${this.apiUrl}`);
-    console.log(response.data);
-    return response.data
-  }
-  async deleteBudget(id:any) {
-    const response=await axios.post(`${this.apiUrl}, {id}`);
-    console.log(response.data);
-    return response.data
-  }
-  
-  
+  constructor() {}
 
-  async createBudget(budget: Budget) {
-    const response=await axios.post(`${this.apiUrl}, {budget}`);
-    console.log(response.data);
-    return response.data
+  getServices(): Observable<any> {    
+      const response = axios.get(`${this.apiUrl}services`,);
+      return from(response.then(res => res.data));
   }
-
-  async getservice( ){
-    const service=await axios.get(`${this.apiUrl}`);
-    console.log(service.data);
-    return service.data;}
 }
