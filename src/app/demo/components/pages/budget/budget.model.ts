@@ -6,10 +6,9 @@ export interface BudgetDetail {
 }
 
 export interface Budget {
-  id: string;
   total: number;
   discount: number;
-  finalTotal: any;
+  finalTotal: number;
   observations: string;
   status: string;
   budgetDetails: BudgetDetail[];

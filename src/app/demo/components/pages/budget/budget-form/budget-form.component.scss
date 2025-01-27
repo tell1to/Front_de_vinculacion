@@ -1,0 +1,140 @@
+/* Estilos existentes */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.budget-create {
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-right: 10px;
+  min-width: 150px;
+}
+
+input, p-inputNumber, p-dropdown, p-inputTextarea {
+  flex-grow: 1;
+}
+
+.buttons-group {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.buttons-group button {
+  margin-right: 3px;
+}
+
+.buttons-group button:last-child {
+  margin-right: 0;
+}
+
+.custom-input {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 100%;
+  color: #495057;
+  background-color: #fff;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  &:disabled {
+    background-color: #e9ecef;
+    opacity: 1;
+  }
+
+  &::placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    color: black;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+}
+
+.summary {
+  padding: 1rem;
+  border-top: 1px solid #ced4da;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #495057;
+}
+
+.modal-button {
+  background-color: #409bfd;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+  }
+}
+
+/* Nuevos estilos para separar los botones y cambiar colores */
+.buttons {
+  display: flex;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.custom-add-button {
+  background-color: #4caf50; /* Verde para añadir detalle */
+  color: white;
+}
+
+.custom-submit-button {
+  background-color: #2196f3; /* Azul para enviar presupuesto */
+  color: white;
+}
